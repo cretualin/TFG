@@ -1,33 +1,15 @@
 
-
 - name: Configurar Switch Este
   hosts: sw-este
   gather_facts: false
   connection: local
   
-  roles:
-    - config_sw_este
+  tasks:
+  - name: show vlan
+    ios_command:
+      authorize: yes
+      commands:
+        - show vlan brief
+    register: sh_vlan
 
-- name: Configurar Switch Oeste
-  hosts: sw-oeste
-  gather_facts: false
-  connection: local
-
-  roles:
-    - config_sw_oeste
-
-- name: Configurar Router Norte
-  hosts: r-oeste
-  gather_facts: false
-  connection: local
-
-  roles:
-    - config_r_oeste
-
-- name: Configurar Router Norte
-  hosts: r-norte
-  gather_facts: false
-  connection: local
-
-  roles:
-    - config_r_norte
+  - debug: var=sh_vlan.stdout_lines
