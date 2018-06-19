@@ -8,6 +8,7 @@
   - name: show vlan
     ios_command:
       authorize: yes
+      auth_pass: ansible
       commands:
         - show vlan brief
     register: sh_vlan
