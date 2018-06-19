@@ -1,4 +1,4 @@
-- include: group_vars/switch/main.yml
+
 
 - name: Configurar Switch Este
   hosts: sw-este
