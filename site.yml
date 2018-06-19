@@ -1,16 +1,41 @@
+---
+- name: Realizar copia de seguridad
+  hosts: all
+  gather_facts: false
+  connection: local
+
+  roles:
+    - Backup
+
 
 - name: Configurar Switch Este
   hosts: sw-este
   gather_facts: false
   connection: local
   
-  tasks:
-  - name: show vlan
-    ios_command:
-      authorize: yes
-      auth_pass: ansible
-      commands:
-        - show vlan brief
-    register: sh_vlan
+  roles:
+    - config_sw_este
 
-  - debug: var=sh_vlan.stdout_lines
+- name: Configurar Switch Oeste
+  hosts: sw-oeste
+  gather_facts: false
+  connection: local
+
+  roles:
+    - config_sw_oeste
+
+- name: Configurar Router Norte
+  hosts: r-oeste
+  gather_facts: false
+  connection: local
+
+  roles:
+    - config_r_oeste
+
+- name: Configurar Router Norte
+  hosts: r-norte
+  gather_facts: false
+  connection: local
+
+  roles:
+    - config_r_norte
