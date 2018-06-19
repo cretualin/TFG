@@ -1,11 +1,4 @@
----
-- name: Realizar copia de seguridad
-  hosts: all
-  gather_facts: false
-  connection: local
 
-  roles:
-    - Backup
 
 - name: Configurar Switch Este
   hosts: sw-este
