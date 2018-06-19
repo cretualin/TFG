@@ -1,10 +1,10 @@
-
+- include: group_vars/switch/mail.yml
 
 - name: Configurar Switch Este
   hosts: sw-este
   gather_facts: false
   connection: local
-  - include: group_vars/switch/mail.yml
+  
   roles:
     - config_sw_este
 
