@@ -3,7 +3,7 @@
 parent: router ospf 1
 area: 1
 ## Configuration for OSPF (networks) ## 
-ip_lan99: 192.168.99.0
+ip_lan99: 192.168.96.0
 wildmask_lan99: 0.0.0.255
 
 ip_lan21: 192.168.21.0
