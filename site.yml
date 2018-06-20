@@ -1,23 +1,23 @@
 ---
 
 
-- name: Configurar Switch Este
-  hosts: sw-este
-  gather_facts: false
-  connection: local
+#- name: Configurar Switch Este
+#  hosts: sw-este
+#  gather_facts: false
+#  connection: local
   
-  roles:
-    - config_sw_este
+#  roles:
+#    - config_sw_este
 
-- name: Configurar Switch Oeste
-  hosts: sw-oeste
-  gather_facts: false
-  connection: local
+#- name: Configurar Switch Oeste
+#  hosts: sw-oeste
+#  gather_facts: false
+#  connection: local
   
-  roles:
-    - config_sw_oeste
+#  roles:
+#    - config_sw_oeste
 
-- name: Configurar Router Norte
+- name: Configurar Router Oeste
   hosts: r-oeste
   gather_facts: false
   connection: local
