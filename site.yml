@@ -5,7 +5,8 @@
   hosts: sw-este
   gather_facts: false
   connection: local
-  
+  vars_files:
+    - group_vars/switch/main.yaml
   roles:
     - config_sw_este
 
@@ -13,7 +14,8 @@
   hosts: sw-oeste
   gather_facts: false
   connection: local
-
+  vars_files:
+    - group_vars/switch/main.yaml
   roles:
     - config_sw_oeste
 
